@@ -1,0 +1,681 @@
+{
+ "effects": [
+  {
+   "id": "progress-checklist",
+   "name": "Progress card that ticks itself",
+   "kind": "checklist",
+   "what": "A small card with a list of jobs. Each row flips to done as the line is spoken. Some add a thin progress bar and a counter (REEL 36 / 70).",
+   "moves": "Card fades or pops in. Rows complete one at a time on the spoken word, usually as a spinner or empty box turning into a check in under 0.2 seconds.",
+   "build": "A card with N rows. Each row has two states (pending, done). Switch the state at the transcript time of its word. Optional: tween a bar width and a counter number across the whole hold.",
+   "use_for": "Any 'it did this, then this, then this' line. Shows work happening without a screen recording.",
+   "examples": [
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 17.5,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 20.0,
+     "burst": "burst_06.jpg"
+    },
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 5.3,
+     "burst": "burst_03.jpg"
+    },
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 9.4,
+     "burst": "burst_05.jpg"
+    },
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 55.4,
+     "burst": "burst_10.jpg"
+    }
+   ],
+   "have_already": ""
+  },
+  {
+   "id": "scroll-to-the-line",
+   "name": "Document that scrolls to what you are saying",
+   "kind": "screenshot pop-in",
+   "what": "The real result document on screen, scrolling to the section being spoken about. Often with the top and bottom edges blurred so the eye lands in the middle.",
+   "moves": "Cuts in already on the page. A quick scroll (about 0.2 seconds) lands on the section, then a slow upward drift while you talk.",
+   "build": "A tall screenshot or live page inside a clipped frame. Tween its Y position to each section at the spoken time, then drift 10 to 20 pixels. Add a blur gradient mask top and bottom.",
+   "use_for": "Proof that the output exists. Works for a report, a scoreboard, a skill file, a long prompt.",
+   "examples": [
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 23.9,
+     "burst": "burst_06.jpg"
+    },
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 42.5,
+     "burst": "burst_10.jpg"
+    },
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 44.7,
+     "burst": "burst_11.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 80.2,
+     "burst": "burst_12.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 3.7,
+     "burst": "burst_02.jpg"
+    }
+   ],
+   "have_already": ""
+  },
+  {
+   "id": "point-at-the-line",
+   "name": "Point at the exact line",
+   "kind": "annotation",
+   "what": "On a screenshot or document, one line gets singled out: a box drawn round it, a highlighter wipe, an accent outline, or everything else dimmed.",
+   "moves": "The mark appears on the spoken word. A box or outline pops in under 0.2 seconds. A highlighter wipes left to right in about 0.2 to 0.4 seconds.",
+   "build": "An absolutely positioned box or highlight over the screenshot at the line's coordinates. Pop it, or tween its width from 0. For a spotlight, a dark overlay with a clear slot that slides.",
+   "use_for": "Any time the proof is on screen but the viewer would not know where to look.",
+   "examples": [
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 6.7,
+     "burst": "burst_02.jpg"
+    },
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 33.4,
+     "burst": "burst_08.jpg"
+    },
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 38.0,
+     "burst": "burst_09.jpg"
+    },
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 29.2,
+     "burst": "burst_08.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 11.0,
+     "burst": "burst_04.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Draw word (32), Face callout (21)"
+  },
+  {
+   "id": "seam-label",
+   "name": "Label pill on the seam that swaps to the spoken term",
+   "kind": "label",
+   "what": "In a split layout, one small pill sits where the top panel meets the face. Its text changes to name the thing currently being shown.",
+   "moves": "Pops in one step. The text swaps in place on the spoken word. It stays put across cuts, which ties the scenes together.",
+   "build": "One fixed-position pill element. Change its text content at each transcript time. No motion on the pill itself.",
+   "use_for": "Naming tools or steps as you go, without a new graphic for each.",
+   "examples": [
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 8.9,
+     "burst": "burst_03.jpg"
+    },
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 23.7,
+     "burst": "burst_07.jpg"
+    },
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 29.2,
+     "burst": "burst_08.jpg"
+    }
+   ],
+   "have_already": ""
+  },
+  {
+   "id": "stacking-bars",
+   "name": "List that stacks, new item on top",
+   "kind": "checklist",
+   "what": "A list builds one labelled bar at a time. Each new bar arrives at the top and pushes the others down. Can be replayed later as a callback.",
+   "moves": "About 0.4 seconds per bar: the new one fades in above while the stack slides down one row.",
+   "build": "A column of bars. For each new bar, tween the existing stack down by one row height and fade the new bar in at the top.",
+   "use_for": "'It built these' lists: skills, tools, steps.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 45.6,
+     "burst": "burst_08.jpg"
+    },
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 55.4,
+     "burst": "burst_10.jpg"
+    }
+   ],
+   "have_already": ""
+  },
+  {
+   "id": "resizing-inset",
+   "name": "Example window that grows and shrinks per topic",
+   "kind": "split panel",
+   "what": "A rounded inset showing the example video. It sits small in a corner while you talk, and grows large when the example is the point.",
+   "moves": "Scales and moves over about 0.4 to 0.6 seconds, or jumps in under 0.2. The content inside cuts independently.",
+   "build": "A wrapper around a second video. Tween its scale and position between two presets on topic changes.",
+   "use_for": "Teaching an edit or a technique where the viewer needs to see the example and you.",
+   "examples": [
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 5.9,
+     "burst": "burst_01.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 26.7,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 74.0,
+     "burst": "burst_11.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Video card (16)"
+  },
+  {
+   "id": "show-the-matte",
+   "name": "Flash the cutout, then the composite",
+   "kind": "transition",
+   "what": "For about half a second the person is shown cut out on a checkerboard, then the scene comes back with the type sitting behind them.",
+   "moves": "The checkerboard cross-dissolves to the room in roughly 0.2 to 0.4 seconds.",
+   "build": "Layer order: checkerboard, big type, cutout of the subject. Fade the checkerboard out to reveal the plate.",
+   "use_for": "Proving text really sits behind the head. A good beat in any video about editing.",
+   "examples": [
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 9.3,
+     "burst": "burst_02.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Layer explode (41)"
+  },
+  {
+   "id": "two-tone-emphasis",
+   "name": "Caption with the key word in a second typeface",
+   "kind": "kinetic type",
+   "what": "Normal captions in a bold sans. The one word that matters switches to a coloured serif or script, sometimes with a glow, sometimes with letters sliding up one by one.",
+   "moves": "Words replace each other every 0.4 to 0.8 seconds. The emphasis word's letters rise about 10 pixels and fade in over 0.2 to 0.4 seconds.",
+   "build": "Two caption styles. Tag the emphasis word in the transcript and render it with the second style and a per-letter stagger.",
+   "use_for": "The keyword in a CTA, or the one word a line turns on.",
+   "examples": [
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 34.7,
+     "burst": "burst_09.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 9.1,
+     "burst": "burst_03.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 37.2,
+     "burst": "burst_12.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Giant captions (03)"
+  },
+  {
+   "id": "index-and-card",
+   "name": "Fixed index list plus one swapping card",
+   "kind": "split panel",
+   "what": "A numbered list stays on screen. A single card beside it swaps to show each item, with an 'NN/17' counter. The active list row lights up.",
+   "moves": "The card content hard-cuts every 1 to 1.5 seconds. The highlight moves in the same frame. Nothing animates in between.",
+   "build": "A static list and one media slot. On each item time: swap the slot's source, move the highlight class, update the counter.",
+   "use_for": "Showing many things fast while keeping the viewer oriented. Suits your effects reels.",
+   "examples": [
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 1.5,
+     "burst": "burst_01.jpg"
+    },
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 3.4,
+     "burst": "burst_02.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Phone feed (30), the HUD chapter list"
+  },
+  {
+   "id": "clear-then-number",
+   "name": "Clear the frame, then one big number",
+   "kind": "transition",
+   "what": "Everything on screen frosts over and fades out. Then a single large number lands alone.",
+   "moves": "Frosted fade over about 0.2 to 0.4 seconds, then the number arrives and holds.",
+   "build": "Apply a blur and fade to the current graphics group, then show one oversized numeral.",
+   "use_for": "The turn from a list to the bigger promise ('and 26 more').",
+   "examples": [
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 16.5,
+     "burst": "burst_08.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Giant captions (03), Number climb (23)"
+  },
+  {
+   "id": "count-up-grid",
+   "name": "Counter with a grid that fills",
+   "kind": "counter",
+   "what": "A big number counts up while small blocks fill in beside it, one block per unit.",
+   "moves": "Card pops in at zero. Number and blocks rise together and reach the total in under a second, then hold for several seconds.",
+   "build": "A grid of N hidden squares. Stagger them visible while tweening the number text from 0 to N.",
+   "use_for": "Any 'I had N of these' line.",
+   "examples": [
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 11.7,
+     "burst": "burst_03.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Number climb (23), Post wall (38)",
+   "caution": "On a reel about saved reels this is his card for the same line. Use it on a different topic."
+  },
+  {
+   "id": "you-vs-them-grid",
+   "name": "Two columns, one side fades",
+   "kind": "split panel",
+   "what": "Two identical grids side by side. One dims to grey (lost). The other keeps a few blocks solid and grows a list under it (kept).",
+   "moves": "Left column fades in. Right column pops in. The dimming takes around a second.",
+   "build": "Two grids of squares. Tween one side's fill to grey. On the other, keep selected squares and append label rows.",
+   "use_for": "Any before and after, or you versus the tool.",
+   "examples": [
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 35.8,
+     "burst": "burst_08.jpg"
+    },
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 40.0,
+     "burst": "burst_09.jpg"
+    }
+   ],
+   "have_already": "",
+   "caution": "This is the signature graphic of his doomscroll reel. Do not use it on yours."
+  },
+  {
+   "id": "type-on-file",
+   "name": "A real file typing itself out",
+   "kind": "mock UI",
+   "what": "A card styled as a file shows the real contents appearing line by line.",
+   "moves": "Empty card fades in over about 0.2 seconds, then one line per 0.2 second step.",
+   "build": "A monospace block. Reveal one line at a time. Optional footer strip for a one-line claim.",
+   "use_for": "Showing the actual skill, prompt or config that did the work.",
+   "examples": [
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 30.0,
+     "burst": "burst_07.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Terminal reveal (19)"
+  },
+  {
+   "id": "built-ui-demo",
+   "name": "Small built UI demo in place of a screen recording",
+   "kind": "mock UI",
+   "what": "A clean, purpose-built mock of the product doing the thing: an email typing in, a scan band sweeping a page, a status card filling in.",
+   "moves": "Code or text lines appear in sequence over about a second. A scan band sweeps. Status rows fill one by one.",
+   "build": "A small HTML scene per benefit: a window frame, typed text, one sweeping element, a status list.",
+   "use_for": "Explaining a benefit when the real screen is ugly or slow.",
+   "examples": [
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 13.5,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 22.4,
+     "burst": "burst_06.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Prompt bar (04), NLE timeline (08)",
+   "caution": "In your 66 reel collection, designed mocks in place of real footage sat 25 points below comparable reels."
+  },
+  {
+   "id": "blurred-prompt",
+   "name": "Blur the prompt so they have to ask for it",
+   "kind": "mock UI",
+   "what": "The screen recording shows the prompt being pasted, but the text itself is blurred.",
+   "moves": "A blur region sits over the pasted block for as long as it is on screen.",
+   "build": "A blur filter on a rectangle tracked over the prompt area of the recording.",
+   "use_for": "A keyword giveaway where the prompt is the prize.",
+   "examples": [
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 21.4,
+     "burst": "burst_05.jpg"
+    }
+   ],
+   "have_already": ""
+  },
+  {
+   "id": "ring-magnifier",
+   "name": "Moving ring that shows where to look",
+   "kind": "annotation",
+   "what": "A circle that magnifies a small area and moves across a photo to the detail being named.",
+   "moves": "The ring slides between targets within one or two frames.",
+   "build": "A circular mask over a scaled copy of the image, positioned at the target. Tween its position.",
+   "use_for": "Pointing out a small detail in a photo or screenshot.",
+   "examples": [
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 2.9,
+     "burst": "burst_01.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Face callout (21)"
+  },
+  {
+   "id": "slot-word",
+   "name": "Pill whose word spins like a slot machine",
+   "kind": "label",
+   "what": "A pill reads 'Expert at' and the last word scrolls vertically through options before settling.",
+   "moves": "The word blurs through several values for a few frames, then lands.",
+   "build": "A clipped text slot. Tween a stacked list of words upward and stop on the chosen one.",
+   "use_for": "'It can do X, Y, Z' in one small graphic.",
+   "examples": [
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 1.7,
+     "burst": "burst_01.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Title swap (34)"
+  },
+  {
+   "id": "screenshot-on-blur",
+   "name": "Screenshot card on a blurred copy of itself",
+   "kind": "screenshot pop-in",
+   "what": "A screenshot sits as a card. Behind it is the same image scaled up, blurred and darkened. An accent outline draws round the card.",
+   "moves": "Hard cut in. The card drifts up slightly and settles. The outline pops in under 0.2 seconds.",
+   "build": "Two copies of the image: one full-bleed with blur and a dark overlay, one as a centred card with a border.",
+   "use_for": "Showing a source (a repo, a chart, an article) without a plain flat screenshot.",
+   "examples": [
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 11.0,
+     "burst": "burst_04.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Reel feed (15)"
+  },
+  {
+   "id": "inbox-pile",
+   "name": "Messages pile up to a 99+ badge",
+   "kind": "card",
+   "what": "Message boxes stack one on another and a notification badge jumps to 99+.",
+   "moves": "Boxes arrive one at a time, then a tag appears beside the badge.",
+   "build": "A stack of message rows added on a stagger, plus a badge whose text changes.",
+   "use_for": "'Too many people asked' and similar demand proof.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 62.6,
+     "burst": "burst_11.jpg"
+    }
+   ],
+   "have_already": "",
+   "closest": "Comment drop (18), Voice note (42)"
+  },
+  {
+   "id": "comment-keyword-mock",
+   "name": "Comment box: keyword types, comment posts, reply arrives",
+   "kind": "mock UI",
+   "what": "A mock comment field. The keyword types in with a caret, posts, and the auto-reply or file arrives. One version flips Follow to Following.",
+   "moves": "Keyword types over about 0.2 to 0.4 seconds. Bubbles arrive one at a time.",
+   "build": "Already built.",
+   "use_for": "The ask.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 68.0,
+     "burst": "burst_12.jpg"
+    },
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 22.9,
+     "burst": "burst_09.jpg"
+    },
+    {
+     "reel": "Def9pj5TWtA",
+     "t": 25.1,
+     "burst": "burst_10.jpg"
+    },
+    {
+     "reel": "Dd35zfeq9bR",
+     "t": 53.3,
+     "burst": "burst_11.jpg"
+    }
+   ],
+   "have_already": "Comment CTA (17), Comment drop (18)"
+  },
+  {
+   "id": "strike-it-out",
+   "name": "Draw the wrong way, then strike it out",
+   "kind": "annotation",
+   "what": "A diagram or price card gets a red strike or X and a handwritten note.",
+   "moves": "The strike draws over about 0.4 seconds.",
+   "build": "Already built.",
+   "use_for": "Enemy beats.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 9.5,
+     "burst": "burst_02.jpg"
+    },
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 62.6,
+     "burst": "burst_11.jpg"
+    }
+   ],
+   "have_already": "Strike word (35), Icon strike (06), Draw word (32)"
+  },
+  {
+   "id": "split-to-fullscreen",
+   "name": "Hard cut between split layout and full-screen graphic",
+   "kind": "transition",
+   "what": "Explanation runs in a split layout. Step headers cut to a full-screen graphic with a step chip.",
+   "moves": "Hard cuts, under 0.2 seconds.",
+   "build": "Already built.",
+   "use_for": "Step headers and section breaks.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 27.1,
+     "burst": "burst_05.jpg"
+    },
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 39.1,
+     "burst": "burst_07.jpg"
+    }
+   ],
+   "have_already": "your band and full-face choreography, Title card (13)"
+  },
+  {
+   "id": "type-behind-subject",
+   "name": "Big type behind a shrinking subject",
+   "kind": "kinetic type",
+   "what": "Words stack behind or around the person as they shrink in frame.",
+   "moves": "One word per 0.2 second step while the subject scales down over about a second.",
+   "build": "Already built.",
+   "use_for": "The hook.",
+   "examples": [
+    {
+     "reel": "DdW5lIwzWiS",
+     "t": 0.1,
+     "burst": "burst_01.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 5.9,
+     "burst": "burst_01.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 31.7,
+     "burst": "burst_05.jpg"
+    }
+   ],
+   "have_already": "Kinetic hook (01), Bold drop (36), Title card (13)"
+  },
+  {
+   "id": "before-after-grade",
+   "name": "Before and after slider on a grade",
+   "kind": "transition",
+   "what": "A line sweeps the clip while the colour grade changes, sometimes with a tone-curve panel beside it.",
+   "moves": "The sweep and grade change take about 0.4 seconds.",
+   "build": "Already built.",
+   "use_for": "Any look or edit claim.",
+   "examples": [
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 26.7,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 50.9,
+     "burst": "burst_08.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 58.6,
+     "burst": "burst_09.jpg"
+    }
+   ],
+   "have_already": "Grade slider (10), Eyedropper grade (11), Film look (12)"
+  },
+  {
+   "id": "prompt-bar",
+   "name": "Prompt bar over the shot",
+   "kind": "mock UI",
+   "what": "A dark prompt bar with typed text, placed over the head when a prompt is spoken.",
+   "moves": "Text types on.",
+   "build": "Already built.",
+   "use_for": "'I just typed...'",
+   "examples": [
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 26.7,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 36.3,
+     "burst": "burst_06.jpg"
+    },
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 21.4,
+     "burst": "burst_05.jpg"
+    }
+   ],
+   "have_already": "Prompt bar (04)"
+  },
+  {
+   "id": "node-pipeline",
+   "name": "Pipeline where a spark travels and fills each node",
+   "kind": "diagram",
+   "what": "Nodes joined by lines. An accent spark moves along a line and the next node fills as its step is spoken.",
+   "moves": "Lines draw, then a spark crosses each one in a few frames.",
+   "build": "Already built.",
+   "use_for": "Explaining a workflow.",
+   "examples": [
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 14.8,
+     "burst": "burst_05.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 35.3,
+     "burst": "burst_11.jpg"
+    },
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 35.5,
+     "burst": "burst_06.jpg"
+    }
+   ],
+   "have_already": "System map (26), Funnel in (28)"
+  },
+  {
+   "id": "grid-wall",
+   "name": "Wall of tiles",
+   "kind": "diagram",
+   "what": "A grid of tiles fills the frame to show volume, then dims.",
+   "moves": "Tiles arrive on a diagonal stagger.",
+   "build": "Already built.",
+   "use_for": "Volume of work or volume of saves.",
+   "examples": [
+    {
+     "reel": "Dd9DCEZh3In",
+     "t": 21.0,
+     "burst": "burst_04.jpg"
+    },
+    {
+     "reel": "De8SPjEAuV0",
+     "t": 58.6,
+     "burst": "burst_09.jpg"
+    }
+   ],
+   "have_already": "Playing grid (14), Post wall (38)"
+  },
+  {
+   "id": "keyword-card",
+   "name": "Typographic keyword card for the ask",
+   "kind": "kinetic type",
+   "what": "A plain card: a script word, then the keyword in heavy type and quotes.",
+   "moves": "Words pop in on 0.2 second steps.",
+   "build": "Already built.",
+   "use_for": "The ask.",
+   "examples": [
+    {
+     "reel": "DcarQfpTRt6",
+     "t": 50.2,
+     "burst": "burst_12.jpg"
+    },
+    {
+     "reel": "DeHUaCoPFTV",
+     "t": 37.2,
+     "burst": "burst_12.jpg"
+    }
+   ],
+   "have_already": "Comment CTA (17), Giant captions (03)"
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 ---
 name: saved-to-skills
-description: Turn a saved collection of Instagram reels (or any list of reel links) into tested Claude skills, built from what the reels actually DO (hooks, structure, edit, CTA) as well as what they say, and ranked by real performance data. Use this whenever someone wants to learn from, mine, steal from, study or "let Claude watch" their saved reels, a saved folder or collection, a swipe file of videos, or a creator's content, and whenever they want to turn reels or short videos into skills, a playbook, a style guide or a content system, even if they never say the word "skill". Also use it to refresh skills from new saves.
+description: Turn a saved collection of Instagram reels (or any list of reel links) into tested Claude skills, built from what the reels actually DO (hooks, structure, edit, CTA) as well as what they say, and ranked by real performance data. Also has a graphics mode that reads how other creators' motion graphics, cards, captions and transitions are built and turns them into a catalog of effects to rebuild. Use this whenever someone wants to learn from, mine, steal from, study or "let Claude watch" their saved reels, a saved folder or collection, a swipe file of videos, or a creator's content, and whenever they want to turn reels or short videos into skills, a playbook, a style guide or a content system, even if they never say the word "skill". Use it too when they like the graphics, edit or visual style in some videos and want ideas, a style breakdown or effects to build. Also use it to refresh skills from new saves.
 ---
 
 # Saved to Skills
@@ -36,6 +36,7 @@ Everything for one collection lives in one folder. Ask where, or default to `./s
   playbook.md          the merged, cited playbook
   skills/<name>/       the skills that survived testing
   tests/               with and without outputs
+  effects-catalog.md   graphics mode only: effects worth building, with build specs
 ```
 
 ## The run
@@ -136,6 +137,22 @@ Finish with the numbers, stated plainly:
 - what was not verified
 
 Then tell the user where the skills are and how to install them.
+
+## Graphics mode
+
+Use this when the person cares about how videos look and move: motion graphics, on-screen cards, captions, transitions, a creator's edit style. Phrases like "I like the graphics in these", "steal this style", "what effects are they using", "give me motion graphic ideas".
+
+The normal run sees one frame per second, which shows a graphic after it has landed but not how it arrived. Graphics mode adds burst strips: 8 frames across about 1.4 seconds at every moment something changes on screen, so the entrance can be read.
+
+```
+python3 scripts/watch_reels.py <workspace>/metrics.json <workspace>/reels --graphics
+```
+
+It can be added to a workspace that was already watched. Then read `references/graphics-mode.md` and follow it: write a `graphics.json` per reel, group the techniques into `effects.json`, and run `python3 scripts/effects_catalog.py <workspace>`.
+
+Hand back the catalog (new ideas first), a style sheet per creator, and three to five effects to build first. If the person has their own effects library, check each idea against it so the catalog says what is new to them.
+
+Graphics mode can run on its own or alongside the normal run. On its own it needs only steps 1 to 3 above, with `--graphics`.
 
 ## Refreshing
 

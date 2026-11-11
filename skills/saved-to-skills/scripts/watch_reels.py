@@ -10,13 +10,15 @@ For every reel it writes a small folder:
   cuts.json                hard-cut timestamps, cuts per 10s, average shot length
   media.json               duration, size, where each piece came from
   meta.json                creator, caption and numbers for this reel (from metrics.json)
+  graphics/                only with --graphics: burst strips (8 frames across ~1.4s) at each
+                           moment something arrives on screen, plus events.json listing them
 
 Contact sheets are the trick: 4 images cover a 75 second reel completely, so a
 model sees every beat of the edit for the token cost of 4 pictures.
 
 Usage:
   python3 watch_reels.py <metrics.json | links.txt> <out-dir> [--workers 4]
-                         [--only SHORTCODE ...] [--keep-video] [--no-whisper]
+                         [--only SHORTCODE ...] [--keep-video] [--no-whisper] [--graphics [N]]
 
 Needs ffmpeg, ffprobe, yt-dlp on PATH and GROQ_API_KEY or OPENAI_API_KEY for
 speech. The video file is deleted after processing unless --keep-video is set.
@@ -169,16 +171,111 @@ def write_meta(reel: dict, out: Path, dur: float | None = None) -> None:
     (out / "meta.json").write_text(json.dumps(meta, indent=1))
 
 
-def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool) -> dict:
+BURST_FPS = 5          # frames per second inside a burst strip
+BURST_FRAMES = 8       # 4 columns x 2 rows
+BURST_LEAD = 0.3       # start this long before the change, so the "before" state is visible
+CUT_SCORE = 0.30       # a change this large is a hard cut, not a graphic arriving
+
+
+def change_scores(video: Path) -> list[tuple[float, float]]:
+    """How much the picture changed at each tenth of a second, 0 to 1.
+
+    A talking head sits around 0.005. A card popping in is 0.03 to 0.15. A hard
+    cut is 0.3 and up. Sampling at 10 fps on a tiny copy keeps this fast.
+    """
+    r = sh(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(video), "-an", "-vf",
+            "fps=10,scale=160:-2,select='gte(scene,0)',metadata=print:file=-", "-f", "null", "-"], timeout=600)
+    rows, t = [], None
+    for line in r.stdout.splitlines():
+        m = re.search(r"pts_time:([0-9.]+)", line)
+        if m:
+            t = float(m.group(1))
+        m = re.search(r"scene_score=([0-9.]+)", line)
+        if m and t is not None:
+            rows.append((t, float(m.group(1))))
+    return rows
+
+
+def pick_events(rows: list[tuple[float, float]], limit: int) -> tuple[list[dict], float]:
+    """Find the moments something new arrives on screen.
+
+    The bar adapts to the reel: 5x its own median change, never below 0.03. That
+    way a shaky handheld reel does not flag every frame, and a locked-off one
+    still catches a small label fading in.
+    """
+    if not rows:
+        return [], 0.0
+    scores = sorted(s for _, s in rows)
+    bar = max(0.03, 5 * scores[len(scores) // 2])
+    events, cur = [], None
+    for t, sc in rows:
+        if sc >= bar:
+            if cur and t - cur["last"] <= 0.5:
+                cur["last"], cur["score"] = t, max(cur["score"], sc)
+            else:
+                cur = {"t": t, "last": t, "score": sc}
+                events.append(cur)
+    if len(events) > limit:
+        # Too many. Two things matter more than raw size: cover the whole reel, and
+        # prefer something arriving inside a shot over a hard cut. Cuts score highest,
+        # so picking by size alone keeps only cuts and loses the subtle graphics.
+        span = (rows[-1][0] or 1) / limit
+        best: dict[int, dict] = {}
+        for e in events:
+            slot = min(int(e["t"] / span), limit - 1)
+            rank = (e["score"] < CUT_SCORE, e["score"])  # in-shot changes first, then by size
+            if slot not in best or rank > best[slot]["rank"]:
+                best[slot] = {**e, "rank": rank}
+        events = [{k: v for k, v in e.items() if k != "rank"} for _, e in sorted(best.items())]
+    return events, bar
+
+
+def graphic_bursts(video: Path, out: Path, limit: int, segments: list[dict]) -> int:
+    """Write one burst strip per on-screen change, so the motion can be read.
+
+    The 1 fps contact sheets show what a graphic looks like once it has landed.
+    They cannot show how it got there. A burst strip is 8 frames across about
+    1.4 seconds around the change: read left to right, top row then bottom row.
+    """
+    out.mkdir(parents=True, exist_ok=True)
+    for stale in out.glob("burst_*.jpg"):  # a redo may find fewer events than last time
+        stale.unlink()
+    events, bar = pick_events(change_scores(video), limit)
+    listed = []
+    for i, e in enumerate(events, 1):
+        start = max(0.0, e["t"] - BURST_LEAD)
+        name = f"burst_{i:02d}.jpg"
+        sh(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{start:.2f}", "-t", f"{BURST_FRAMES / BURST_FPS:.2f}",
+            "-i", str(video), "-vf", f"fps={BURST_FPS},scale=384:-2,tile=4x2:padding=6:color=white",
+            "-frames:v", "1", "-q:v", "3", str(out / name)])
+        if not (out / name).exists():
+            continue
+        end = start + (BURST_FRAMES - 1) / BURST_FPS
+        said = " ".join(s["text"] for s in segments if s["end"] >= start - 0.3 and s["start"] <= end + 0.3)
+        listed.append({"i": i, "t": round(e["t"], 1), "file": name,
+                       "covers": f"{start:.1f}s to {end:.1f}s, one frame every {1 / BURST_FPS:.1f}s",
+                       "kind": "cut" if e["score"] >= CUT_SCORE else "change",
+                       "change_score": round(e["score"], 3), "said_around_it": said.strip()})
+    (out / "events.json").write_text(json.dumps({
+        "how_to_read": "Each burst strip is 8 frames, 4 columns by 2 rows, left to right then top to bottom. "
+                       "The first frame is just before the change. 'kind: cut' is a hard cut to a new shot; "
+                       "'kind: change' is something arriving or leaving inside the shot.",
+        "threshold_used": round(bar, 3), "events": listed}, indent=1))
+    return len(listed)
+
+
+def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool, graphics: int = 0,
+            redo_graphics: bool = False) -> dict:
     code = reel["shortcode"]
     out = out_root / code
-    prior = None
-    if (out / "media.json").exists():
-        prior = json.loads((out / "media.json").read_text())
-        # Already done, unless the transcript failed last time: then redo only the speech.
-        if no_whisper or not str(prior.get("transcript_source", "")).startswith("failed"):
-            write_meta(reel, out, prior.get("duration_s"))  # numbers may have been refreshed
-            return {"shortcode": code, "status": "cached"}
+    prior = json.loads((out / "media.json").read_text()) if (out / "media.json").exists() else None
+    # Work out what is still missing, so a second run only does that part.
+    need_speech = prior is None or (not no_whisper
+                                    and str(prior.get("transcript_source", "")).startswith("failed"))
+    need_graphics = graphics > 0 and (redo_graphics or not (out / "graphics" / "events.json").exists())
+    if prior and not need_speech and not need_graphics:
+        write_meta(reel, out, prior.get("duration_s"))  # numbers may have been refreshed
+        return {"shortcode": code, "status": "cached"}
     out.mkdir(parents=True, exist_ok=True)
     video = out / "video.mp4"
     try:
@@ -191,14 +288,21 @@ def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool) -> d
             sheets = make_sheets(video, out / "sheets", dur)
             cuts = find_cuts(video, dur)
             (out / "cuts.json").write_text(json.dumps(cuts, indent=1))
-        tr = {"source": "skipped", "segments": []} if no_whisper else transcribe(video, out)
-        (out / "transcript.json").write_text(json.dumps(tr, indent=1))
-        lines = [f"[{int(s['start'])//60:02d}:{int(s['start'])%60:02d}] {s['text']}" for s in tr["segments"]]
-        (out / "transcript.txt").write_text("\n".join(lines) or "(no speech found)")
+        if need_speech:
+            tr = {"source": "skipped", "segments": []} if no_whisper else transcribe(video, out)
+            (out / "transcript.json").write_text(json.dumps(tr, indent=1))
+            lines = [f"[{int(s['start'])//60:02d}:{int(s['start'])%60:02d}] {s['text']}" for s in tr["segments"]]
+            (out / "transcript.txt").write_text("\n".join(lines) or "(no speech found)")
+        else:
+            tr = json.loads((out / "transcript.json").read_text())
         media = {"shortcode": code, "url": reel["url"], "duration_s": round(dur, 1),
                  "download": how, "sheets": sheets, "sheet_seconds": SHEET_SECONDS,
                  "cut_count": cuts["cut_count"], "avg_shot_seconds": cuts["avg_shot_seconds"],
                  "transcript_source": tr["source"], "words": len(tr.get("text", "").split())}
+        if need_graphics:
+            media["graphic_bursts"] = graphic_bursts(video, out / "graphics", graphics, tr.get("segments", []))
+        elif prior and "graphic_bursts" in prior:
+            media["graphic_bursts"] = prior["graphic_bursts"]
         (out / "media.json").write_text(json.dumps(media, indent=1))
         write_meta(reel, out, dur)
         return {"shortcode": code, "status": "ok", **media}
@@ -231,6 +335,11 @@ def main() -> None:
     ap.add_argument("--only", nargs="*", help="only these shortcodes")
     ap.add_argument("--keep-video", action="store_true")
     ap.add_argument("--no-whisper", action="store_true")
+    ap.add_argument("--graphics", nargs="?", const=10, type=int, default=0, metavar="N",
+                    help="graphics mode: also write up to N burst strips per reel (default 10) "
+                         "showing how each on-screen change animates in")
+    ap.add_argument("--redo-graphics", action="store_true",
+                    help="with --graphics: rebuild the burst strips even if they already exist")
     args = ap.parse_args()
 
     for tool in ("ffmpeg", "ffprobe", "yt-dlp"):
@@ -244,12 +353,15 @@ def main() -> None:
     out_root.mkdir(parents=True, exist_ok=True)
     results = []
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futs = [pool.submit(process, r, out_root, args.keep_video, args.no_whisper) for r in reels]
+        futs = [pool.submit(process, r, out_root, args.keep_video, args.no_whisper, args.graphics,
+                            args.redo_graphics) for r in reels]
         for f in as_completed(futs):
             res = f.result()
             results.append(res)
             print(f"[watch] {res['shortcode']}: {res['status']}"
-                  + (f" ({res.get('duration_s')}s, {res.get('cut_count')} cuts)" if res["status"] == "ok" else "")
+                  + (f" ({res.get('duration_s')}s, {res.get('cut_count')} cuts"
+                     + (f", {res['graphic_bursts']} bursts" if "graphic_bursts" in res else "") + ")"
+                     if res["status"] == "ok" else "")
                   + (f" {res.get('error')}" if res["status"] == "failed" else ""), flush=True)
     ok = sum(r["status"] in ("ok", "cached") for r in results)
     (out_root / "_watch_log.json").write_text(json.dumps(results, indent=1))

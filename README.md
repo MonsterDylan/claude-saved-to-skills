@@ -82,6 +82,28 @@ This will not work as an upload to claude.ai on the web. It needs a real shell t
 7. **Builds skills.** One per job you actually do. Every rule carries its source reels.
 8. **Tests them.** Same task, with the skill and without. Keeps what changes the output.
 
+Graphics mode is a second path through the same first three steps. See below.
+
+## Graphics mode
+
+Like the graphics in someone's videos? Point it at those and ask for the effects.
+
+> Run saved-to-skills in graphics mode on these 7 reels. I want the effects worth building.
+
+The normal run sees one frame per second, which shows a graphic after it has landed. Graphics mode adds burst strips: 8 frames across about 1.4 seconds at every moment something arrives on screen. That is enough to read how it moves: a pop, a fade, a slide, a count-up, a type-on.
+
+You get back:
+
+- **An effects catalog:** each effect, how many creators use it, how it moves and how to rebuild it.
+- **A style sheet per creator:** zones, type, caption rules, rhythm, and what they never do.
+- **What is new to you:** if you have your own effects library, it checks each idea against it.
+
+Timing read from frames 0.2 seconds apart is an estimate. It can say "fades in over about a third of a second." It cannot give you an easing curve.
+
+It learns the technique, not the artwork. A counter or a slide-in card is fair to rebuild. Someone's mascot is not.
+
+My run on 7 reels is in [`examples/graphics-mode/`](examples/graphics-mode/): 78 graphics became 28 effects.
+
 ## Read the results honestly
 
 - It is correlation inside a set of reels you hand-picked. A strong hint, not a law.
