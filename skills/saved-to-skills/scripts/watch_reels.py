@@ -10,6 +10,7 @@ For every reel it writes a small folder:
   cuts.json                hard-cut timestamps, cuts per 10s, average shot length
   media.json               duration, size, where each piece came from
   meta.json                creator, caption and numbers for this reel (from metrics.json)
+  hook.jpg                 only with --hook: the first 3 seconds as 8 frames, 0.4 seconds apart
   graphics/                only with --graphics: burst strips (8 frames across ~1.4s) at each
                            moment something arrives on screen, plus events.json listing them
 
@@ -18,7 +19,7 @@ model sees every beat of the edit for the token cost of 4 pictures.
 
 Usage:
   python3 watch_reels.py <metrics.json | links.txt> <out-dir> [--workers 4]
-                         [--only SHORTCODE ...] [--keep-video] [--no-whisper] [--graphics [N]]
+                         [--only SHORTCODE ...] [--keep-video] [--no-whisper] [--graphics [N]] [--hook]
 
 Needs ffmpeg, ffprobe, yt-dlp on PATH and GROQ_API_KEY or OPENAI_API_KEY for
 speech. The video file is deleted after processing unless --keep-video is set.
@@ -264,8 +265,20 @@ def graphic_bursts(video: Path, out: Path, limit: int, segments: list[dict]) -> 
     return len(listed)
 
 
+def hook_strip(video: Path, out: Path) -> bool:
+    """The first 3 seconds as one strip: 8 frames, 0.4 seconds apart.
+
+    The 1 fps sheets give three frames of the opening. A hook is decided in less
+    time than that, so this shows what the viewer sees before they choose to stay:
+    the first frame, when the text lands, whether anything moves.
+    """
+    sh(["ffmpeg", "-loglevel", "error", "-y", "-t", "3.2", "-i", str(video),
+        "-vf", "fps=2.5,scale=384:-2,tile=4x2:padding=6:color=white", "-frames:v", "1", "-q:v", "3", str(out)])
+    return out.exists()
+
+
 def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool, graphics: int = 0,
-            redo_graphics: bool = False) -> dict:
+            redo_graphics: bool = False, hook: bool = False) -> dict:
     code = reel["shortcode"]
     out = out_root / code
     prior = json.loads((out / "media.json").read_text()) if (out / "media.json").exists() else None
@@ -273,7 +286,8 @@ def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool, grap
     need_speech = prior is None or (not no_whisper
                                     and str(prior.get("transcript_source", "")).startswith("failed"))
     need_graphics = graphics > 0 and (redo_graphics or not (out / "graphics" / "events.json").exists())
-    if prior and not need_speech and not need_graphics:
+    need_hook = hook and not (out / "hook.jpg").exists()
+    if prior and not need_speech and not need_graphics and not need_hook:
         write_meta(reel, out, prior.get("duration_s"))  # numbers may have been refreshed
         return {"shortcode": code, "status": "cached"}
     out.mkdir(parents=True, exist_ok=True)
@@ -299,6 +313,8 @@ def process(reel: dict, out_root: Path, keep_video: bool, no_whisper: bool, grap
                  "download": how, "sheets": sheets, "sheet_seconds": SHEET_SECONDS,
                  "cut_count": cuts["cut_count"], "avg_shot_seconds": cuts["avg_shot_seconds"],
                  "transcript_source": tr["source"], "words": len(tr.get("text", "").split())}
+        if need_hook:
+            hook_strip(video, out / "hook.jpg")
         if need_graphics:
             media["graphic_bursts"] = graphic_bursts(video, out / "graphics", graphics, tr.get("segments", []))
         elif prior and "graphic_bursts" in prior:
@@ -338,6 +354,8 @@ def main() -> None:
     ap.add_argument("--graphics", nargs="?", const=10, type=int, default=0, metavar="N",
                     help="graphics mode: also write up to N burst strips per reel (default 10) "
                          "showing how each on-screen change animates in")
+    ap.add_argument("--hook", action="store_true",
+                    help="also write hook.jpg per reel: the first 3 seconds as 8 frames, 0.4s apart")
     ap.add_argument("--redo-graphics", action="store_true",
                     help="with --graphics: rebuild the burst strips even if they already exist")
     args = ap.parse_args()
@@ -354,7 +372,7 @@ def main() -> None:
     results = []
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futs = [pool.submit(process, r, out_root, args.keep_video, args.no_whisper, args.graphics,
-                            args.redo_graphics) for r in reels]
+                            args.redo_graphics, args.hook) for r in reels]
         for f in as_completed(futs):
             res = f.result()
             results.append(res)

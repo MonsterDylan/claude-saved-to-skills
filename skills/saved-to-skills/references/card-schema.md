@@ -12,6 +12,7 @@ Read, in this order:
 1. `transcript.txt`
 2. Every image in `sheets/`. Each sheet is 20 frames at 1 frame per second, 5 columns by 4 rows, read left to right then top to bottom. `sheet_00` is seconds 0 to 19, `sheet_01` is 20 to 39, and so on. So row 1 column 3 of `sheet_01` is second 22.
 3. `cuts.json` for hard-cut count and pace.
+   If there is a `hook.jpg`, read it too. It is the first 3 seconds as 8 frames, 4 columns by 2 rows, 0.4 seconds apart. Use it for `does.hook`: what the very first frame is, when any text lands, what moves.
 4. `meta.json` for the creator, caption and numbers. (If the creator and numbers in it are empty, the run had no metrics. Take the creator from the on-screen handle or watermark and leave the numbers out.)
 
 Describe what is actually on the sheets. If you cannot see something, leave the field empty instead of guessing. A card with honest gaps is worth more than a card full of plausible filler, because the scoreboard counts these observations as evidence.

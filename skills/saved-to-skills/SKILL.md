@@ -69,6 +69,8 @@ python3 scripts/watch_reels.py <workspace>/metrics.json <workspace>/reels --work
 
 Each reel gets contact sheets, a timestamped transcript, cut data and a small `meta.json` (creator, caption, numbers). The video is deleted afterwards. Failures are logged and skipped. If some transcripts fail on a rate limit, run the same command again: it redoes only those. Report how many were watched.
 
+If the collection is about hooks or openers, add `--hook`. Each reel then also gets `hook.jpg`: the first 3 seconds as 8 frames, 0.4 seconds apart, so the card can describe exactly what the viewer sees before deciding to stay.
+
 No Apify token? Pass `links.txt` instead of `metrics.json`. Everything still runs, but there are no view counts, so techniques can only be ranked by how many creators use them.
 
 ### 4. Write a teardown card per reel
@@ -103,6 +105,8 @@ Read `scoreboard.md`. The verdicts mean:
 - **anecdote**: everything else. Leave it out.
 
 If the collection mixes kinds of reel that are not comparable (memes next to tutorials), list the odd ones under `segments` in `moves.json`. Lift is then measured against reels of the same kind. Without this, every tutorial technique looks like a loser next to the memes.
+
+With fewer than 15 scored reels the scoreboard does not print lift at all. A median over a handful of reels means nothing, so small collections are ranked only by how many separate creators use each technique (`common` means 3 or more). Say this plainly: a 6 reel folder gives merged knowledge, not a performance ranking.
 
 The score measures reach and saves, not leads or sales. A technique that narrows the audience on purpose (naming one profession, for example) will show up as a drag and may still be exactly right for the user's goal. Say so when it applies.
 

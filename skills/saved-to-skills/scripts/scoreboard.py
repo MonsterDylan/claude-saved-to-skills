@@ -43,6 +43,7 @@ from pathlib import Path
 
 
 MARGIN = 8  # points of score, on a 0 to 100 scale
+MIN_FOR_LIFT = 15  # scored reels needed before a lift number is worth printing
 
 
 def fmt(n):
@@ -76,6 +77,12 @@ def main() -> None:
         except json.JSONDecodeError as e:
             print(f"[scoreboard] bad card {p}: {e}", file=sys.stderr)
     metrics, has_numbers = load_metrics(ws, cards)
+    # A median over a handful of reels means nothing. Under 15 scored reels, do not
+    # compute lift at all: rank by how many separate creators use a technique.
+    n_scored = sum(1 for c in cards if (metrics.get(c) or {}).get("score") is not None)
+    small = has_numbers and n_scored < MIN_FOR_LIFT
+    if small:
+        has_numbers = False
     spec = json.loads((ws / "moves.json").read_text())
     moves = spec["moves"]
     seg_of = {c: seg for seg, codes in (spec.get("segments") or {}).items() for c in codes}
@@ -99,7 +106,7 @@ def main() -> None:
         top = max(ms, key=lambda m: m.get("plays") or 0)
         creators = sorted({m["creator"] for m in ms if m.get("creator")})
         med = statistics.median(scores) if scores else None
-        lift = round(statistics.median(adjusted), 1) if adjusted else None
+        lift = round(statistics.median(adjusted), 1) if adjusted and has_numbers else None
         segs = sorted({seg_of.get(c, "teach") for c in reels})
         rows.append({
             "id": mv["id"], "type": mv.get("type"), "name": mv["name"], "how": mv.get("how", ""),
@@ -133,9 +140,11 @@ def main() -> None:
              "Lift = how far the reels using a technique sit above or below the median of their own segment. "
              "It is a correlation inside a hand-picked collection, not proof of cause.", ""]
     if not has_numbers:
-        lines[2:] = [f"{len(cards)} reels watched. No metrics.json was found, so there are no view counts and "
-                     "no lift. Techniques are ranked only by how many separate creators use them. "
-                     "Add an APIFY_TOKEN and run metrics.py to get a real ranking.", ""]
+        why = (f"Only {n_scored} reels have numbers, which is too few to compare groups, so no lift is shown."
+               if small else "No metrics.json was found, so there are no view counts and no lift. "
+               "Add an APIFY_TOKEN and run metrics.py to get a real ranking.")
+        lines[2:] = [f"{len(cards)} reels watched. {why} Techniques are ranked only by how many separate "
+                     "creators use them: 'common' means 3 or more.", ""]
     for kind in ("hook", "structure", "edit", "cta", "trust", "teaching"):
         sub = [r for r in rows if r["type"] == kind]
         if not sub:
