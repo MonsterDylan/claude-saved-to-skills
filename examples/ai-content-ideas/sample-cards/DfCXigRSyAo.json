@@ -1,0 +1,96 @@
+{
+  "shortcode": "DfCXigRSyAo",
+  "url": "https://www.instagram.com/reel/DfCXigRSyAo/",
+  "creator": "brand.nat",
+  "length_s": 36,
+  "topic": "Project NOMAD, a free GitHub project that puts Wikipedia, maps, Khan Academy and a local AI on a spare Linux laptop as an offline internet backup",
+  "format": "split-screen",
+
+  "says": {
+    "claim": "A free GitHub project called Nomad gives you a backup of the internet at home (offline Wikipedia, maps, Khan Academy, local AI) for the price of a spare Linux laptop, versus about $700 for commercial kits.",
+    "steps": [
+      "Find the free GitHub project (Project NOMAD)",
+      "Install it on a spare laptop running Linux",
+      "Use offline Wikipedia, offline maps, Khan Academy lessons and a local AI without internet"
+    ],
+    "tools": ["Project NOMAD (GitHub, Crosstalk Solutions)", "Linux laptop", "Wikipedia", "Khan Academy", "offline maps"],
+    "prompts_or_templates": [],
+    "proof_shown": "GitHub repo page (project-nomad, 4.2k forks), the NOMAD site and command center, YouTube footage by Crosstalk Solutions, and news headlines about the outages (GOV.UK, Fortune, AOL, Wikimedia, TechRadar)",
+    "freebie": {"keyword": "offline", "promised": "the GitHub link by DM"}
+  },
+
+  "does": {
+    "hook": {
+      "spoken": "If everyone lost their internet tomorrow, this would mean no access to Google Maps, Wikipedia, medical guides, or a working AI.",
+      "on_screen_text": "HOW TO PREPARE / NO INTERNET (with wifi-off icon)",
+      "visual": "Face centered in front of an RGB-lit wall, two-line title top, one-word captions on the chest",
+      "type": "curiosity-gap",
+      "seconds_to_point": 10
+    },
+    "beats": [
+      {"t": "0:00", "beat": "hook", "what": "'HOW TO PREPARE / NO INTERNET' title; what-if scenario spoken"},
+      {"t": "0:04", "beat": "stakes", "what": "Phone-style notifications stack in: Google Maps You're offline, Wikipedia can't connect, Medical Guides no connection, AI Assistant network unavailable"},
+      {"t": "0:08", "beat": "reveal", "what": "GitHub repo page for project-nomad appears over her face, then the NOMAD site tagline"},
+      {"t": "0:12", "beat": "features", "what": "Command Center UI, Wikipedia library, offline maps zoom, Khan Academy logo"},
+      {"t": "0:19", "beat": "news proof", "what": "GOV.UK emergency preparedness story, Fortune 'plan for 90 days without the grid', AOL 'Websites go dark as AI exposes critical security flaws', Wikimedia and TechRadar outage pieces with yellow highlighter on key phrases"},
+      {"t": "0:28", "beat": "price", "what": "Black offline backup box labeled $700, then a laptop showing NOMAD with $700 struck through and 'Free'"},
+      {"t": "0:31", "beat": "catch", "what": "'The Only Catch' card builds: laptop icon + storage bar (10 GB basic, 250 GB with AI)"},
+      {"t": "0:33", "beat": "CTA", "what": "Profile card for brand.nat appears with 'comment offline' spoken; ends on the card"}
+    ],
+    "layout": "Top half is a cream-background card or screenshot stage; bottom half is her face. Early frames are full face with title. One word captions sit on the seam.",
+    "captions": "Single word at a time, very large bold white sans with dark shadow, centered at the seam between graphic and face; changes every word (about 3 words per second).",
+    "graphics": "Fake phone notifications, real screenshots of GitHub, site, news headlines with yellow highlighter, product-style render of a box and laptop, 'The Only Catch' card; change about every 2 to 3 seconds.",
+    "palette": "Cream cards, black and rainbow RGB light in the background, yellow highlighter and yellow badge accents",
+    "pace": {"cut_count": 11, "avg_shot_s": 3.01, "visual_changes_per_10s": "6 to 10 (hard cuts plus word-by-word captions)"},
+    "face_time_pct": 70,
+    "cta": {"line": "Just comment offline and I'll DM you the link.", "keyword": "offline", "at_s": 32, "is_last_line": true, "type": "comment-keyword"},
+    "retention_devices": [
+      "Doomsday what-if hook framed as 'how to prepare'",
+      "Timely news proof (outage that same week) to tie it to now",
+      "Price anchor: $700 struck through to Free",
+      "'The Only Catch' disclosure card for honesty",
+      "One-word-at-a-time captions keep eyes moving"
+    ]
+  },
+
+  "moves": [
+    {
+      "type": "hook",
+      "move": "Open with a 'how to prepare for X' title and a what-if scenario that lists the specific things the viewer would lose.",
+      "evidence": "0:00 'HOW TO PREPARE NO INTERNET'; 0:00 to 0:08 'no access to Google Maps, Wikipedia, medical guides, or a working AI'"
+    },
+    {
+      "type": "edit",
+      "move": "Show the stakes as a stack of phone notifications that each name something lost, one per spoken item.",
+      "evidence": "0:04 to 0:08 Google Maps You're offline, Wikipedia Can't connect, Medical Guides, AI Assistant notifications stack in"
+    },
+    {
+      "type": "edit",
+      "move": "Cap word by word in oversized bold caps at the seam between a graphic panel (top) and the face (bottom).",
+      "evidence": "0:00 'EVERYONE', 0:02 'THIS', 0:03 'ACCESS' ... one word per beat through 0:35"
+    },
+    {
+      "type": "trust",
+      "move": "Cite a current news event with real headline screenshots and highlight the key phrase in yellow.",
+      "evidence": "0:19 to 0:27 Fortune, AOL, GOV.UK, Wikimedia, TechRadar headlines, 'Websites go dark' and 'Wikipedia was down for many' highlighted"
+    },
+    {
+      "type": "structure",
+      "move": "Do a price anchor: show the paid alternative with its price, then strike it and show Free.",
+      "evidence": "0:28 'OFFLINE BACKUP KIT $700' then laptop with $700 struck and 'Free'"
+    },
+    {
+      "type": "teaching",
+      "move": "State the catch honestly with a small card (what hardware it needs) before the CTA.",
+      "evidence": "0:31 'The Only Catch' card: laptop icon and storage bar; spoken 'you need a spare laptop running Linux'"
+    },
+    {
+      "type": "cta",
+      "move": "End on a single comment-keyword line with her profile card on screen.",
+      "evidence": "0:32 'Just comment offline and I'll DM you the link' with brand.nat card on screen to the last frame"
+    }
+  ],
+
+  "steal": "Build urgency with a 'how to prepare' title, stacked fake notifications and real same-week headlines, then anchor the price ($700 to Free) before the keyword CTA.",
+  "confidence": "high"
+}

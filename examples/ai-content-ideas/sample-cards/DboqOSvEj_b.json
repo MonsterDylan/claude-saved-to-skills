@@ -1,0 +1,57 @@
+{
+  "shortcode": "DboqOSvEj_b",
+  "url": "https://www.instagram.com/reel/DboqOSvEj_b/",
+  "creator": "zubair_trabzada",
+  "length_s": 74,
+  "topic": "A voice-controlled Jarvis AI assistant phones a restaurant, negotiates a reservation, checks back with the boss, and books it",
+  "format": "split-screen",
+  "says": {
+    "claim": "You can build a Jarvis assistant that makes real phone calls on your behalf and reports back.",
+    "steps": [
+      "Tell Jarvis to call the restaurant and book for three at 7 pm",
+      "Jarvis calls, learns 7 pm is full but 8 pm is open, and says it will check with the boss",
+      "Tell Jarvis to book 8 pm",
+      "Jarvis calls back, confirms, and reports the booking"
+    ],
+    "tools": ["Claude Code", "Opus 5 (shown on HUD as OPUS-5)"],
+    "prompts_or_templates": ["Free Jarvis build prompts (not shown on screen, offered in caption)"],
+    "proof_shown": "Real unedited demo: creator holds a phone that rings, the Jarvis HUD shows DIALING, ON THE CALL, ENDED with a call summary and recording link, both calls heard in full audio.",
+    "freebie": {"keyword": "JARVIS", "promised": "Free Jarvis build prompts (from caption; not spoken)"}
+  },
+  "does": {
+    "hook": {
+      "spoken": "Jarvis, call the restaurant. Make a reservation for three people at 7 p.m. tonight.",
+      "on_screen_text": "none visible",
+      "visual": "Top half Jarvis HUD with ring and node graph, bottom half creator seated at mic in white tee, blue backlit studio",
+      "type": "result-first",
+      "seconds_to_point": 0
+    },
+    "beats": [
+      {"t": "0:00", "beat": "hook", "what": "Voice command to Jarvis, which replies Ringing the restaurant now"},
+      {"t": "0:08", "beat": "demo", "what": "Jarvis phone call to the restaurant on speaker; creator holds phone to ear, HUD shows ON THE CALL"},
+      {"t": "0:22", "beat": "twist", "what": "7 pm is unavailable, 8 pm offered; Jarvis says it will check with its boss"},
+      {"t": "0:34", "beat": "report", "what": "Jarvis reports back in butler voice; HUD card shows ENDED with call summary"},
+      {"t": "0:43", "beat": "decision", "what": "Creator says 8 pm works, Jarvis calls back"},
+      {"t": "0:50", "beat": "payoff", "what": "Second call confirms booking; Jarvis jokes about the small victory"},
+      {"t": "1:10", "beat": "cta", "what": "Black end card with AI Workshop logo, 'Watch the full Video, Link in the description' and pointing emoji"}
+    ],
+    "layout": "Vertical split: HUD screen capture on top half, creator on camera bottom half, no captions. End card full-screen black.",
+    "captions": "none in the demo; end card text white bold sans, centered",
+    "graphics": "Screen recording of Jarvis HUD only (status states, call cards). No overlays added.",
+    "palette": "Black HUD with green and cyan glow, coloured node dots; blue backlit studio; white tee",
+    "pace": {"cut_count": 0, "avg_shot_s": 73.9, "visual_changes_per_10s": "1 to 2 (HUD status card changes, no cuts)"},
+    "face_time_pct": 50,
+    "cta": {"line": "Watch the full Video, Link in the description", "keyword": "JARVIS", "at_s": 70, "is_last_line": true, "type": "link"},
+    "retention_devices": ["live unedited real-world task with a plot twist (7 pm unavailable)", "Jarvis butler persona jokes", "HUD status changes (LISTENING, SPEAKING, ON THE CALL)", "the creator's own reaction visible in lower half"]
+  },
+  "moves": [
+    {"type": "hook", "move": "Start the video mid-action with the command spoken to the AI, no intro.", "evidence": "0:00 'Jarvis, call the restaurant. Make a reservation for three...'"},
+    {"type": "structure", "move": "Add a small obstacle in the demo (unavailable slot) and make the AI ask the human, so the demo has a story arc.", "evidence": "0:22 8 pm only; 0:34 Jarvis asks 'shall we court a rival establishment?'; 0:43 creator confirms"},
+    {"type": "edit", "move": "Stack the screen capture on top and the creator reacting on the bottom in one uncut take.", "evidence": "All 4 sheets: HUD top half, creator bottom half; 0 hard cuts"},
+    {"type": "trust", "move": "Show the phone actually ringing and the call logged on the HUD, so the viewer sees the call was real.", "evidence": "0:04 to 0:08 creator holds up phone showing call screen; HUD DIALING then ON THE CALL then ENDED with recording link"},
+    {"type": "edit", "move": "Give the AI a character voice and dry humour so the demo is entertaining even without explanation.", "evidence": "0:38 'court a rival establishment', 1:07 'small victory'"},
+    {"type": "cta", "move": "End on a clean black card pointing to the full tutorial link; the comment keyword lives in the caption.", "evidence": "1:10 'Watch the full Video / Link in the description' card; caption: Comment JARVIS"}
+  ],
+  "steal": "Demo the finished AI doing a real errand end to end in one uncut take with a human decision in the middle, no explanation needed.",
+  "confidence": "high"
+}

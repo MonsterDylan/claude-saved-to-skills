@@ -1,0 +1,7 @@
+.DS_Store
+.env
+__pycache__/
+*.pyc
+# your own runs stay on your machine (root-level only, so the skill folder is not ignored)
+/saved-to-skills/
+/runs/

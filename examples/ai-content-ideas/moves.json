@@ -1,0 +1,892 @@
+{
+ "segments": {
+  "share": [
+   "Dee5dqWvc62",
+   "DeRnvj0Ewnr",
+   "DbOlNxIgaPD",
+   "De-bYhiyQAR",
+   "DbJvxJmv9vw",
+   "Dd2WsxCAOSE",
+   "DeDUVhBNqKB",
+   "Dd4gHHdRKur",
+   "DdmumCkvPqQ",
+   "DcP4PJmSCnz",
+   "DdAL3RTu_F5",
+   "DdkEg2ZzUcb",
+   "DdxZm3gSv_a",
+   "Dd2OPzPgIrn",
+   "Da5kVPbRUm1",
+   "Dc6MCajKQLs",
+   "DfWJElGNZDz"
+  ]
+ },
+ "moves": [
+  {
+   "id": "result-first",
+   "type": "hook",
+   "name": "Open on the finished result already running, no intro",
+   "how": "First frame is the output working: the dashboard, the edited video, the AI on a real call. Explain after.",
+   "reels": [
+    "DboqOSvEj_b",
+    "DZ9VH6zAc9r",
+    "DbcPo0dMQ3d",
+    "De8SPjEAuV0",
+    "Dc6MCajKQLs",
+    "DdH-hO5BjcJ",
+    "DdrUdGbkrT0",
+    "Db5Z8cixSEJ",
+    "DctsS_eMyAs",
+    "DdlzXhqT-re",
+    "DfTZxvio4ce",
+    "DehWYGXgW-O",
+    "DaknJtkMkTZ",
+    "DatlWP7h4Gv",
+    "DfQ654Qk_aD",
+    "DYS74LAAyED",
+    "DfWJElGNZDz",
+    "DaYLPOUqrJk",
+    "DeHX34IxveJ"
+   ],
+   "best_example": "DboqOSvEj_b"
+  },
+  {
+   "id": "number-outcome",
+   "type": "hook",
+   "name": "Lead with a specific number plus the outcome, mirrored on screen",
+   "how": "'37 AI agents run my entire company.' The count goes in the first sentence and in a label on frame one.",
+   "reels": [
+    "DbcPo0dMQ3d",
+    "DbYhDu_MADd",
+    "Dd9DCEZh3In",
+    "Dee5dqWvc62",
+    "Dd6izTYiln1",
+    "DatlWP7h4Gv",
+    "DeSpSc2REfQ",
+    "DdfW8Zhk6M8",
+    "DaGEcKaKQWW",
+    "De7WtbWDTMm",
+    "DciGZoSIpME"
+   ],
+   "best_example": "DbcPo0dMQ3d"
+  },
+  {
+   "id": "news-drop",
+   "type": "hook",
+   "name": "'X just dropped' or 'Claude can now' news framing",
+   "how": "Frame it as fresh news about a known tool, with the logo or repo on screen.",
+   "reels": [
+    "DcQfwZUDwtx",
+    "Dd6izTYiln1",
+    "DZ3H1g4tjRK",
+    "DaGEcKaKQWW",
+    "DeHUaCoPFTV",
+    "DVmqp5NCVEJ",
+    "DdfW8Zhk6M8",
+    "DeHX34IxveJ"
+   ],
+   "best_example": "DcQfwZUDwtx"
+  },
+  {
+   "id": "enemy",
+   "type": "hook",
+   "name": "Name the wrong way or the overpriced thing, then promise the fix",
+   "how": "Call out the common method, a flaw in a popular tool, or an expensive offer in the first line. The fix follows in the same breath.",
+   "reels": [
+    "Dd9DCEZh3In",
+    "DXA4gi1DCOx",
+    "DcQ_zLBo1gK",
+    "DcUniUFNMMK",
+    "DdW5lIwzWiS",
+    "DfRw4sMtL7P",
+    "DeHX34IxveJ"
+   ],
+   "best_example": "Dd9DCEZh3In"
+  },
+  {
+   "id": "stacked-comparison",
+   "type": "hook",
+   "name": "Stack two versions in one frame so the comparison is the hook",
+   "how": "AI over real, result over source, rich over poor. Label both panels. No explanation needed in the first second.",
+   "reels": [
+    "DdmumCkvPqQ",
+    "Dd2OPzPgIrn",
+    "Dd7qxRuonZH",
+    "DdkEg2ZzUcb",
+    "DdwNqCrINda",
+    "Dd4gHHdRKur",
+    "Dd2WsxCAOSE"
+   ],
+   "best_example": "DdmumCkvPqQ"
+  },
+  {
+   "id": "made-with-it",
+   "type": "hook",
+   "name": "Say the video you are watching was made by the tool",
+   "how": "The reel is its own proof. State it in the first seconds and show the styling already applied.",
+   "reels": [
+    "De8SPjEAuV0",
+    "Db5Z8cixSEJ",
+    "DfRw4sMtL7P"
+   ],
+   "best_example": "De8SPjEAuV0"
+  },
+  {
+   "id": "borrowed-fame",
+   "type": "hook",
+   "name": "Open on a borrowed clip, famous name or pop-culture reference",
+   "how": "Start on someone the viewer already knows (a creator, a celebrity program, a movie scene), then pivot to your point.",
+   "reels": [
+    "Dc-a80IEgBp",
+    "DciGZoSIpME",
+    "DcShnwwgPtZ",
+    "DcQ_zLBo1gK",
+    "Da5kVPbRUm1",
+    "DcarQfpTRt6",
+    "DcUniUFNMMK"
+   ],
+   "best_example": "Dc-a80IEgBp"
+  },
+  {
+   "id": "mid-action",
+   "type": "hook",
+   "name": "Start mid-action or mid-conversation",
+   "how": "No greeting, no setup. The first words are the command to the AI, the first list item, or a line from an exchange already underway.",
+   "reels": [
+    "DboqOSvEj_b",
+    "De-bYhiyQAR",
+    "Def9pj5TWtA",
+    "DbeiibeoMe3",
+    "Dee5dqWvc62",
+    "Dd4gHHdRKur",
+    "DahhGBGJO6v"
+   ],
+   "best_example": "DboqOSvEj_b"
+  },
+  {
+   "id": "label-on-absurd",
+   "type": "hook",
+   "name": "One text label over a single absurd or tense frame",
+   "how": "'POV:', 'Average X user:', 'Wait for it'. The viewer reads the joke before the audio starts.",
+   "reels": [
+    "DbOlNxIgaPD",
+    "DcP4PJmSCnz",
+    "DdxZm3gSv_a",
+    "DdAL3RTu_F5",
+    "DbJvxJmv9vw",
+    "De-bYhiyQAR"
+   ],
+   "best_example": "DbOlNxIgaPD"
+  },
+  {
+   "id": "niche-callout",
+   "type": "hook",
+   "name": "Name a specific profession and its constraint in the first line",
+   "how": "'A lawyer's Instagram with no time to record.' 'Over 15 years a doctor.' Speaks to one audience by name.",
+   "reels": [
+    "DdwmXCooOtM",
+    "DYS74LAAyED",
+    "DUt6vM5CJWz",
+    "Da1LdHhhtXy",
+    "DeSpSc2REfQ",
+    "DVmqp5NCVEJ"
+   ],
+   "best_example": "DdwmXCooOtM"
+  },
+  {
+   "id": "numbered-steps",
+   "type": "structure",
+   "name": "Say the count up front and label every step or item on screen",
+   "how": "'Three easy steps.' Each one gets a spoken number and a persistent on-screen tag so the viewer always knows where they are.",
+   "reels": [
+    "Dd9DCEZh3In",
+    "DcQfwZUDwtx",
+    "DZ9VH6zAc9r",
+    "DUt6vM5CJWz",
+    "DfQ654Qk_aD",
+    "DdwmXCooOtM",
+    "DcQ_zLBo1gK",
+    "DeSpSc2REfQ",
+    "DfRw4sMtL7P",
+    "DctsS_eMyAs",
+    "DehWYGXgW-O",
+    "DdW5lIwzWiS",
+    "DeM25Y7sFaS",
+    "DciGZoSIpME",
+    "Def9pj5TWtA",
+    "Dee5dqWvc62",
+    "DambEp1igDW",
+    "DdlzXhqT-re"
+   ],
+   "best_example": "Dd9DCEZh3In"
+  },
+  {
+   "id": "tour-real-system",
+   "type": "structure",
+   "name": "Tour your real system, one area at a time",
+   "how": "Name the whole (six departments, seven branches), then click into each so the screen changes every few seconds.",
+   "reels": [
+    "DbcPo0dMQ3d",
+    "DbYhDu_MADd",
+    "DfTZxvio4ce",
+    "DYS74LAAyED",
+    "Da1LdHhhtXy",
+    "DVmqp5NCVEJ"
+   ],
+   "best_example": "DbcPo0dMQ3d"
+  },
+  {
+   "id": "obstacle-in-demo",
+   "type": "structure",
+   "name": "Put an obstacle, a skeptic moment or a failure inside the demo",
+   "how": "The slot is unavailable. Someone asks 'are you an AI?'. The task fails without the tool, then works with it. A demo with friction has a story.",
+   "reels": [
+    "DboqOSvEj_b",
+    "DdrUdGbkrT0",
+    "Dd6izTYiln1",
+    "DbeiibeoMe3",
+    "DfWJElGNZDz",
+    "De-bYhiyQAR"
+   ],
+   "best_example": "DboqOSvEj_b"
+  },
+  {
+   "id": "late-bonus",
+   "type": "structure",
+   "name": "Hold a bonus, trick or 'crazy part' for late in the reel",
+   "how": "'Here's the trick.' 'But here's the crazy part.' 'We're not done yet.' A marked second peak right before the ask.",
+   "reels": [
+    "DaYLPOUqrJk",
+    "DatlWP7h4Gv",
+    "Db5Z8cixSEJ",
+    "DeDIDapyqcx",
+    "De8SPjEAuV0",
+    "DbcPo0dMQ3d",
+    "DcarQfpTRt6",
+    "Dd9DCEZh3In"
+   ],
+   "best_example": "DaYLPOUqrJk"
+  },
+  {
+   "id": "escalate-then-stop",
+   "type": "structure",
+   "name": "Escalate in beats and end on the strongest line with no sign-off",
+   "how": "Each beat is bigger than the last. The final line is the punchline or the most emotional item, and the video ends there.",
+   "reels": [
+    "De-bYhiyQAR",
+    "Dd2WsxCAOSE",
+    "Dee5dqWvc62",
+    "DdkEg2ZzUcb",
+    "DdxZm3gSv_a",
+    "DahhGBGJO6v",
+    "DbOlNxIgaPD",
+    "DeDUVhBNqKB",
+    "Da5kVPbRUm1"
+   ],
+   "best_example": "De-bYhiyQAR"
+  },
+  {
+   "id": "short-loop",
+   "type": "structure",
+   "name": "Keep it under 15 seconds in one shot so it loops",
+   "how": "One idea, one shot, short enough to replay before the viewer decides to leave.",
+   "reels": [
+    "DbJvxJmv9vw",
+    "DdAL3RTu_F5",
+    "DdxZm3gSv_a",
+    "DbOlNxIgaPD",
+    "DcP4PJmSCnz"
+   ],
+   "best_example": "DbJvxJmv9vw"
+  },
+  {
+   "id": "prompt-chain",
+   "type": "structure",
+   "name": "Chain prompts on screen, each one visibly upgrading the last result",
+   "how": "Type a plain prompt, show the result in seconds, then the next prompt builds on it.",
+   "reels": [
+    "DaknJtkMkTZ",
+    "DatlWP7h4Gv",
+    "DaYLPOUqrJk"
+   ],
+   "best_example": "DaknJtkMkTZ"
+  },
+  {
+   "id": "price-anchor",
+   "type": "structure",
+   "name": "Anchor against a price, then show it free",
+   "how": "Show what others charge ($700, $8,000, a subscription), strike it, and give the free route.",
+   "reels": [
+    "De8SPjEAuV0",
+    "DfCXigRSyAo",
+    "DcQ_zLBo1gK",
+    "DeHX34IxveJ",
+    "DcQfwZUDwtx",
+    "DfQ654Qk_aD",
+    "DdrUdGbkrT0",
+    "De7WtbWDTMm",
+    "DcUniUFNMMK"
+   ],
+   "best_example": "De8SPjEAuV0"
+  },
+  {
+   "id": "verdict-format",
+   "type": "structure",
+   "name": "Run it as a recurring verdict format (Fact or Hype, Yay or Nay)",
+   "how": "A named test with a visible verdict box that stays on screen until the result.",
+   "reels": [
+    "Dd6izTYiln1",
+    "De7WtbWDTMm"
+   ],
+   "best_example": "Dd6izTYiln1"
+  },
+  {
+   "id": "story-automation",
+   "type": "structure",
+   "name": "Tell an automation as a story with a ridiculous payoff",
+   "how": "Trigger, consequence, consequence, absurd final action. One scene per step.",
+   "reels": [
+    "DahhGBGJO6v"
+   ],
+   "best_example": "DahhGBGJO6v"
+  },
+  {
+   "id": "panel-over-face",
+   "type": "edit",
+   "name": "Graphic or screen on top, face below, captions on the seam",
+   "how": "Top 40 to 65 percent is a stage for screens, cards or diagrams. The face stays visible underneath. Captions sit where the two meet.",
+   "reels": [
+    "Dd9DCEZh3In",
+    "DfCXigRSyAo",
+    "DcQfwZUDwtx",
+    "DdW5lIwzWiS",
+    "Db5Z8cixSEJ",
+    "DYS74LAAyED",
+    "DfQ654Qk_aD",
+    "Da1LdHhhtXy",
+    "DeSpSc2REfQ",
+    "DeM25Y7sFaS",
+    "DcShnwwgPtZ",
+    "De8SPjEAuV0",
+    "DeHUaCoPFTV",
+    "DboqOSvEj_b",
+    "Dd6izTYiln1",
+    "Dd7qxRuonZH",
+    "DeDIDapyqcx"
+   ],
+   "best_example": "Dd9DCEZh3In"
+  },
+  {
+   "id": "visual-per-noun",
+   "type": "edit",
+   "name": "Put a visual on every spoken noun, changing every 1 to 3 seconds",
+   "how": "Each tool, number or object named gets its own image, card or screenshot at the moment it is said.",
+   "reels": [
+    "DahhGBGJO6v",
+    "Dd9DCEZh3In",
+    "De8SPjEAuV0",
+    "DcShnwwgPtZ",
+    "DeSpSc2REfQ",
+    "De7WtbWDTMm",
+    "DeHUaCoPFTV",
+    "DcUniUFNMMK",
+    "DcQ_zLBo1gK",
+    "DfQ654Qk_aD",
+    "Da1LdHhhtXy",
+    "DfCXigRSyAo",
+    "Da5kVPbRUm1",
+    "DUt6vM5CJWz",
+    "DdwmXCooOtM"
+   ],
+   "best_example": "DahhGBGJO6v"
+  },
+  {
+   "id": "phone-filmed-screen",
+   "type": "edit",
+   "name": "Film the real screen with a phone instead of screen recording",
+   "how": "Handheld, pointing with a finger or pen, pushing in physically on the result. It reads as live and real.",
+   "reels": [
+    "DbcPo0dMQ3d",
+    "DbYhDu_MADd",
+    "DXA4gi1DCOx",
+    "DVmqp5NCVEJ",
+    "DdH-hO5BjcJ",
+    "DdfW8Zhk6M8",
+    "DdlzXhqT-re",
+    "DfTZxvio4ce",
+    "DeHX34IxveJ",
+    "DZ9VH6zAc9r",
+    "De-bYhiyQAR"
+   ],
+   "best_example": "DbcPo0dMQ3d"
+  },
+  {
+   "id": "word-captions",
+   "type": "edit",
+   "name": "Word-by-word captions, one to three words at a time",
+   "how": "Big, bold, usually caps, one accent colour for the key word.",
+   "reels": [
+    "DahhGBGJO6v",
+    "DfCXigRSyAo",
+    "DcQfwZUDwtx",
+    "DeHX34IxveJ",
+    "DVmqp5NCVEJ",
+    "DaYLPOUqrJk",
+    "DZ3H1g4tjRK",
+    "DatlWP7h4Gv",
+    "DaGEcKaKQWW",
+    "DdfW8Zhk6M8",
+    "DUt6vM5CJWz",
+    "DfQ654Qk_aD",
+    "De7WtbWDTMm",
+    "DaknJtkMkTZ",
+    "DeSpSc2REfQ",
+    "DbeiibeoMe3",
+    "DZ9VH6zAc9r",
+    "Dd9DCEZh3In"
+   ],
+   "best_example": "DahhGBGJO6v"
+  },
+  {
+   "id": "single-take",
+   "type": "edit",
+   "name": "One uncut take, with on-screen labels doing the motion",
+   "how": "No hard cuts. A counter, labels or a diagram change while the shot holds.",
+   "reels": [
+    "Dee5dqWvc62",
+    "DambEp1igDW",
+    "DboqOSvEj_b",
+    "DbOlNxIgaPD",
+    "DeDUVhBNqKB",
+    "DcP4PJmSCnz",
+    "Dc6MCajKQLs",
+    "DUt6vM5CJWz",
+    "DfRw4sMtL7P",
+    "DdrUdGbkrT0",
+    "DfWJElGNZDz",
+    "Def9pj5TWtA"
+   ],
+   "best_example": "Dee5dqWvc62"
+  },
+  {
+   "id": "live-state",
+   "type": "edit",
+   "name": "Keep a live state indicator on screen: counter, checklist, progress bar, verdict box",
+   "how": "Something on screen updates as the video goes, so the viewer can see progress and waits for it to finish.",
+   "reels": [
+    "Dd6izTYiln1",
+    "Dc6MCajKQLs",
+    "DfWJElGNZDz",
+    "Def9pj5TWtA",
+    "DambEp1igDW",
+    "DdrUdGbkrT0",
+    "Db5Z8cixSEJ",
+    "De7WtbWDTMm",
+    "Dee5dqWvc62",
+    "DeM25Y7sFaS"
+   ],
+   "best_example": "Dd6izTYiln1"
+  },
+  {
+   "id": "designed-mocks",
+   "type": "edit",
+   "name": "Use clean designed mocks or diagrams in place of real footage",
+   "how": "Purpose-built UI cards, pixel diagrams or animated mock screens stand in for screen recordings.",
+   "reels": [
+    "DdW5lIwzWiS",
+    "DcUniUFNMMK",
+    "DdwmXCooOtM",
+    "Dd9DCEZh3In",
+    "DeHUaCoPFTV"
+   ],
+   "best_example": "DdW5lIwzWiS"
+  },
+  {
+   "id": "face-in-demo",
+   "type": "edit",
+   "name": "Keep a face in frame during the screen demo",
+   "how": "A small bubble, a reaction layer or a second person stays visible while the screen plays.",
+   "reels": [
+    "DbeiibeoMe3",
+    "Dd6izTYiln1",
+    "DeHX34IxveJ",
+    "DeDIDapyqcx",
+    "DcQ_zLBo1gK",
+    "DaknJtkMkTZ",
+    "DcQfwZUDwtx",
+    "DboqOSvEj_b"
+   ],
+   "best_example": "DbeiibeoMe3"
+  },
+  {
+   "id": "hand-annotation",
+   "type": "edit",
+   "name": "Annotate by hand: circle, strike through, highlight",
+   "how": "Red circle on the number, strike through the wrong way, yellow highlighter on the key phrase of a screenshot.",
+   "reels": [
+    "Dd9DCEZh3In",
+    "DatlWP7h4Gv",
+    "DcQ_zLBo1gK",
+    "Da1LdHhhtXy",
+    "DfCXigRSyAo"
+   ],
+   "best_example": "Dd9DCEZh3In"
+  },
+  {
+   "id": "demo-on-itself",
+   "type": "edit",
+   "name": "Demonstrate the technique on the video itself",
+   "how": "Explain text-behind-head while text sits behind your head. Draw the script structure as you speak it.",
+   "reels": [
+    "De8SPjEAuV0",
+    "DambEp1igDW",
+    "DctsS_eMyAs"
+   ],
+   "best_example": "De8SPjEAuV0"
+  },
+  {
+   "id": "keyword-last-line",
+   "type": "cta",
+   "name": "One comment keyword as the last spoken line, mirrored on screen",
+   "how": "The ask is the final thing said, with the keyword as text. Nothing after it.",
+   "reels": [
+    "DahhGBGJO6v",
+    "Def9pj5TWtA",
+    "DbcPo0dMQ3d",
+    "De8SPjEAuV0",
+    "DbeiibeoMe3",
+    "DcQfwZUDwtx",
+    "DeHX34IxveJ",
+    "DfCXigRSyAo",
+    "Dc-a80IEgBp",
+    "DciGZoSIpME",
+    "DaYLPOUqrJk",
+    "DatlWP7h4Gv",
+    "DaGEcKaKQWW",
+    "DbYhDu_MADd",
+    "DdW5lIwzWiS",
+    "Db5Z8cixSEJ",
+    "Dd7qxRuonZH",
+    "DdH-hO5BjcJ",
+    "DdrUdGbkrT0",
+    "DdkEg2ZzUcb",
+    "DdxZm3gSv_a",
+    "DcarQfpTRt6",
+    "DdfW8Zhk6M8",
+    "DdwNqCrINda",
+    "DfQ654Qk_aD",
+    "De7WtbWDTMm",
+    "DcShnwwgPtZ",
+    "DeHUaCoPFTV",
+    "DcUniUFNMMK",
+    "DctsS_eMyAs",
+    "DdwmXCooOtM",
+    "DYS74LAAyED",
+    "DeDIDapyqcx",
+    "DfTZxvio4ce",
+    "DeSpSc2REfQ",
+    "DaknJtkMkTZ"
+   ],
+   "best_example": "DahhGBGJO6v"
+  },
+  {
+   "id": "no-cta",
+   "type": "cta",
+   "name": "No ask in the video; end on the payoff",
+   "how": "The reel ends on the punchline, the verdict or the last line. Any keyword lives in the caption only.",
+   "reels": [
+    "Dee5dqWvc62",
+    "DeRnvj0Ewnr",
+    "DbOlNxIgaPD",
+    "De-bYhiyQAR",
+    "DbJvxJmv9vw",
+    "Dd2WsxCAOSE",
+    "Dd6izTYiln1",
+    "DeDUVhBNqKB",
+    "Dc6MCajKQLs",
+    "Dd4gHHdRKur",
+    "DXA4gi1DCOx",
+    "DVmqp5NCVEJ",
+    "DcP4PJmSCnz",
+    "DdAL3RTu_F5",
+    "Da5kVPbRUm1",
+    "DfRw4sMtL7P"
+   ],
+   "best_example": "Dee5dqWvc62"
+  },
+  {
+   "id": "early-offer",
+   "type": "cta",
+   "name": "Make the offer early or keep it on screen throughout, not only at the end",
+   "how": "Offer the keyword the moment the asset is first mentioned, or pin it as a static bar, then repeat it last.",
+   "reels": [
+    "DcQfwZUDwtx",
+    "DciGZoSIpME",
+    "DdlzXhqT-re",
+    "Dd9DCEZh3In",
+    "Dd2OPzPgIrn",
+    "DdmumCkvPqQ",
+    "DdkEg2ZzUcb"
+   ],
+   "best_example": "DcQfwZUDwtx"
+  },
+  {
+   "id": "show-the-deliverable",
+   "type": "cta",
+   "name": "Show the actual deliverable right before the ask",
+   "how": "The repo page, the guide cover, the DM arriving. The viewer sees what they get before being asked.",
+   "reels": [
+    "DdrUdGbkrT0",
+    "DdwmXCooOtM",
+    "Dd9DCEZh3In",
+    "DeSpSc2REfQ",
+    "DctsS_eMyAs",
+    "DZ3H1g4tjRK"
+   ],
+   "best_example": "DdrUdGbkrT0"
+  },
+  {
+   "id": "face-for-the-ask",
+   "type": "cta",
+   "name": "Cut back to your face for the ask",
+   "how": "Leave the screen or b-roll and deliver the keyword to camera.",
+   "reels": [
+    "DahhGBGJO6v",
+    "DaYLPOUqrJk",
+    "DaGEcKaKQWW",
+    "DfTZxvio4ce",
+    "DeHUaCoPFTV",
+    "DaknJtkMkTZ",
+    "DcQ_zLBo1gK",
+    "DeDIDapyqcx",
+    "DcUniUFNMMK"
+   ],
+   "best_example": "DahhGBGJO6v"
+  },
+  {
+   "id": "follow-gate",
+   "type": "cta",
+   "name": "Ask for a follow plus the comment",
+   "how": "'Follow me and comment KEYWORD.' Two actions in one ask.",
+   "reels": [
+    "DaGEcKaKQWW",
+    "DatlWP7h4Gv",
+    "DaYLPOUqrJk",
+    "DcUniUFNMMK",
+    "Def9pj5TWtA"
+   ],
+   "best_example": "DaGEcKaKQWW"
+  },
+  {
+   "id": "own-numbers",
+   "type": "trust",
+   "name": "Show your own real numbers on screen",
+   "how": "Your analytics, your payments, your comment count, your member count. Circled or highlighted.",
+   "reels": [
+    "DatlWP7h4Gv",
+    "DdH-hO5BjcJ",
+    "Dc-a80IEgBp",
+    "DcShnwwgPtZ",
+    "DdfW8Zhk6M8",
+    "DcQ_zLBo1gK",
+    "DdwmXCooOtM",
+    "DeSpSc2REfQ",
+    "Def9pj5TWtA"
+   ],
+   "best_example": "DatlWP7h4Gv"
+  },
+  {
+   "id": "prove-its-real",
+   "type": "trust",
+   "name": "Prove it is real, not a concept",
+   "how": "Click into it, open the actual file, show the call log, hold up the phone with the text it sent, name the exact repo.",
+   "reels": [
+    "DbcPo0dMQ3d",
+    "DbYhDu_MADd",
+    "DboqOSvEj_b",
+    "DZ3H1g4tjRK",
+    "DdrUdGbkrT0",
+    "DeHUaCoPFTV",
+    "DcQfwZUDwtx",
+    "DdlzXhqT-re",
+    "DXA4gi1DCOx"
+   ],
+   "best_example": "DbcPo0dMQ3d"
+  },
+  {
+   "id": "admit-the-catch",
+   "type": "trust",
+   "name": "Admit the catch, the limit or your own critique",
+   "how": "'The only catch.' 'It zooms too much.' 'You may need to ask for a revision.' Honest friction before the ask.",
+   "reels": [
+    "De8SPjEAuV0",
+    "DcQfwZUDwtx",
+    "DfCXigRSyAo",
+    "Dd2OPzPgIrn",
+    "Dc6MCajKQLs",
+    "DVmqp5NCVEJ",
+    "DfQ654Qk_aD",
+    "DfRw4sMtL7P",
+    "Da1LdHhhtXy",
+    "DeM25Y7sFaS",
+    "DUt6vM5CJWz"
+   ],
+   "best_example": "De8SPjEAuV0"
+  },
+  {
+   "id": "news-proof",
+   "type": "trust",
+   "name": "Back the claim with real headline or source screenshots",
+   "how": "Current headlines, a README, a news pop-in, shown at the moment the claim is made.",
+   "reels": [
+    "DfCXigRSyAo",
+    "DUt6vM5CJWz",
+    "Dd6izTYiln1"
+   ],
+   "best_example": "DfCXigRSyAo"
+  },
+  {
+   "id": "kill-the-course",
+   "type": "trust",
+   "name": "Name the 'this ends in a course' objection and cross it out",
+   "how": "Show the paid course, strike it, promise free help.",
+   "reels": [
+    "Dd9DCEZh3In"
+   ],
+   "best_example": "Dd9DCEZh3In"
+  },
+  {
+   "id": "topic-agents-os",
+   "type": "teaching",
+   "name": "Topic: AI agents running a company, a personal OS, or a Jarvis",
+   "how": "Dashboards of agents by department, a voice assistant doing a real errand, a content OS.",
+   "reels": [
+    "DbcPo0dMQ3d",
+    "DbYhDu_MADd",
+    "DfTZxvio4ce",
+    "DboqOSvEj_b",
+    "DcUniUFNMMK",
+    "DdrUdGbkrT0",
+    "DahhGBGJO6v"
+   ],
+   "best_example": "DbcPo0dMQ3d"
+  },
+  {
+   "id": "topic-claude-edits",
+   "type": "teaching",
+   "name": "Topic: Claude edits your video",
+   "how": "Claude Code with skills, Remotion, ChatCut, DaVinci handoff, auto music.",
+   "reels": [
+    "De8SPjEAuV0",
+    "DcQfwZUDwtx",
+    "Db5Z8cixSEJ",
+    "Def9pj5TWtA",
+    "DfQ654Qk_aD",
+    "DfRw4sMtL7P"
+   ],
+   "best_example": "De8SPjEAuV0"
+  },
+  {
+   "id": "topic-health-data",
+   "type": "teaching",
+   "name": "Topic: Claude plus your own health and fitness data",
+   "how": "Whoop export or self-hosted replacement, Strava and Oura through a database, a Telegram health coach, pose tracking.",
+   "reels": [
+    "DeHX34IxveJ",
+    "DcarQfpTRt6",
+    "DXA4gi1DCOx",
+    "DcQ_zLBo1gK",
+    "De7WtbWDTMm",
+    "DeSpSc2REfQ",
+    "Dc6MCajKQLs"
+   ],
+   "best_example": "DeHX34IxveJ"
+  },
+  {
+   "id": "topic-content-research",
+   "type": "teaching",
+   "name": "Topic: Claude for content research, hooks and scripting",
+   "how": "Claude as strategist, connecting Instagram, watching videos, script structure, hook teardowns, saved reels to skills.",
+   "reels": [
+    "DatlWP7h4Gv",
+    "DbeiibeoMe3",
+    "DZ3H1g4tjRK",
+    "Dd9DCEZh3In",
+    "DeDIDapyqcx",
+    "Dc-a80IEgBp",
+    "DambEp1igDW",
+    "DciGZoSIpME",
+    "DdwmXCooOtM"
+   ],
+   "best_example": "DatlWP7h4Gv"
+  },
+  {
+   "id": "topic-ai-video",
+   "type": "teaching",
+   "name": "Topic: AI video generation tricks",
+   "how": "Higgsfield Genjutsu, Kling Motion Control, Seedance video-to-video, AI hooks and text effects, face-swap parody.",
+   "reels": [
+    "DZ9VH6zAc9r",
+    "DdH-hO5BjcJ",
+    "Dd7qxRuonZH",
+    "DdwNqCrINda",
+    "DctsS_eMyAs",
+    "DdlzXhqT-re",
+    "DehWYGXgW-O",
+    "DdmumCkvPqQ",
+    "Dd2OPzPgIrn",
+    "DdkEg2ZzUcb",
+    "Dd2WsxCAOSE",
+    "Dd4gHHdRKur",
+    "DeRnvj0Ewnr",
+    "DdxZm3gSv_a"
+   ],
+   "best_example": "DZ9VH6zAc9r"
+  },
+  {
+   "id": "topic-medicine",
+   "type": "teaching",
+   "name": "Topic: AI in medicine and clinics",
+   "how": "ER command center, a surgeon's 10 year prediction, ambient scribes, patient conversion system, eldercare camera, longevity companies.",
+   "reels": [
+    "DVmqp5NCVEJ",
+    "DUt6vM5CJWz",
+    "Da1LdHhhtXy",
+    "DYS74LAAyED",
+    "DfWJElGNZDz",
+    "DeM25Y7sFaS"
+   ],
+   "best_example": "DVmqp5NCVEJ"
+  },
+  {
+   "id": "topic-new-tools",
+   "type": "teaching",
+   "name": "Topic: a new connector, MCP, repo or plugin for Claude",
+   "how": "'Install these 4 MCPs', the Indeed connector, Agent Reach, 11 free plugins, data-broker removal, Project NOMAD.",
+   "reels": [
+    "DdW5lIwzWiS",
+    "DaGEcKaKQWW",
+    "DaYLPOUqrJk",
+    "Dd6izTYiln1",
+    "DeHUaCoPFTV",
+    "DdfW8Zhk6M8",
+    "DaknJtkMkTZ",
+    "DcShnwwgPtZ",
+    "DfCXigRSyAo"
+   ],
+   "best_example": "DdW5lIwzWiS"
+  },
+  {
+   "id": "topic-ai-as-joke",
+   "type": "teaching",
+   "name": "Topic: AI as the butt of the joke",
+   "how": "The chatbot apologizes for the disaster it caused, hidden 'thinking' lines, usage-limit memes.",
+   "reels": [
+    "DbOlNxIgaPD",
+    "De-bYhiyQAR",
+    "DcP4PJmSCnz",
+    "DdAL3RTu_F5"
+   ],
+   "best_example": "DbOlNxIgaPD"
+  }
+ ]
+}

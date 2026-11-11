@@ -1,0 +1,102 @@
+{
+  "shortcode": "Dd9DCEZh3In",
+  "url": "https://www.instagram.com/reel/Dd9DCEZh3In/",
+  "creator": "stilesai",
+  "length_s": 73,
+  "topic": "Do not build one Claude skill per saved reel; pool saved reels and freebies into one knowledge base, compare, keep the best, and stack into one setup",
+  "format": "talking-head",
+
+  "says": {
+    "claim": "Making one skill per saved reel is wrong; consolidate everything you have saved, compare overlapping advice, keep the best version, and stack the skills into one setup.",
+    "steps": [
+      "Sort your saved reels into collections (editing, marketing, yours)",
+      "Step 1: put everything in one place, saved reels plus every freebie sent to your DMs, as one knowledge base or Claude project",
+      "Step 2: have Claude compare everything; if five creators teach the same thing keep the version that works and drop the rest",
+      "Step 3: stack the kept skills into one setup (e.g. Script, Hooks, Edit, Captions, Sound)",
+      "Start a project with that setup so it already knows the playbook; works for marketing, sales, school"
+    ],
+    "tools": ["Claude", "Claude project", "Instagram saved collections"],
+    "prompts_or_templates": [],
+    "proof_shown": "None beyond his own claim that his Claude setup is built this way; diagrams are illustrative ('EXAMPLE' tags on the DM and comment mockups)",
+    "freebie": {"keyword": "CAMPAIGN", "promised": "the full guide, auto-sent by DM; he also offers free setup help by message"}
+  },
+
+  "does": {
+    "hook": {
+      "spoken": "600 of you DM me about letting your AI doom scroll to build skills off of your saved reels, and most of you are doing it wrong.",
+      "on_screen_text": "600 OF YOU / DM'D ME ABOUT (word-by-word caption in black box); pixel mascot with a reel card above",
+      "visual": "Face in the lower 60% of frame on a cream background, pixel-art blue robot mascot top-center holding a phone",
+      "type": "enemy/you're-doing-it-wrong",
+      "seconds_to_point": 6
+    },
+    "beats": [
+      {"t": "0:00", "beat": "hook", "what": "Number-first claim (600 DMs) over mascot; 'doing it wrong'"},
+      {"t": "0:06", "beat": "enemy", "what": "Diagram '1 REEL = 1 SKILL' gets struck through in red with handwritten 'wrong'"},
+      {"t": "0:09", "beat": "setup", "what": "'SORT INTO COLLECTIONS' boxes: Editing, Marketing, Yours fill with reel tiles"},
+      {"t": "0:15", "beat": "save ask", "what": "Pixel bookmark turns yellow with handwritten 'save this one'; spoken 'honestly, you should save this one too'"},
+      {"t": "0:18", "beat": "pile", "what": "Grid of hundreds of reel tiles fills the screen; comment-keyword mockups and DM inbox with 'never opened'"},
+      {"t": "0:27", "beat": "step 1", "what": "Red 'STEP 1 ONE PLACE' tag; everything drops into one 'Knowledge base' box that becomes a 'Claude project' as six mascots work"},
+      {"t": "0:35", "beat": "turn", "what": "'STILL JUST A PILE' then 'it actually gets good'"},
+      {"t": "0:39", "beat": "step 2", "what": "Five creator cards with the same hook tip; one is marked KEPT and turns into hooks/SKILL.md"},
+      {"t": "0:46", "beat": "step 3", "what": "Skill stack list (Script, Hooks, Edit, Captions, Sound) then a swarm of mascots with SKILL.md files"},
+      {"t": "0:52", "beat": "payoff", "what": "'Launch reel' project checklist ticks off Hook, Script, Edit, Captions; icons for Marketing, Sales, School"},
+      {"t": "1:00", "beat": "trust + CTA", "what": "$497 'AI skills course' crossed out 'not happening'; 99+ DMs; typed 'Comment CAMPAIGN' box auto-sends full-guide.pdf; offer of free setup help"}
+    ],
+    "layout": "Vertical split. Top ~40% is a graphic stage on cream (#f0f0ea style) background; bottom ~60% is the face in a warm-lit room. Some beats go full-screen graphic with no face. Caption sits in the seam between graphic and face.",
+    "captions": "Uppercase monospace, white text in a solid black box, 2 to 4 words at a time, centered at the graphic/face seam; step tags are red boxes top-center; handwritten red script annotations ('wrong', 'save this one', 'never opened', 'not happening').",
+    "graphics": "Flat pixel-art mascot and UI-card diagrams drawn to match the spoken line, new graphic roughly every 1.5 to 3 seconds; labeled 'EXAMPLE' on fake DMs and comments.",
+    "palette": "Cream background, black, cobalt blue, with red and yellow accents",
+    "pace": {"cut_count": 8, "avg_shot_s": 8.16, "visual_changes_per_10s": "4 to 6 (graphic swaps every 1.5 to 3s even though hard cuts are few)"},
+    "face_time_pct": 55,
+    "cta": {"line": "So comment campaign and it'll auto send you the full guide. And if you need help setting it up, just message me. I'm not charging you anything and I will respond in a timely manner.", "keyword": "CAMPAIGN", "at_s": 64, "is_last_line": false, "type": "comment-keyword"},
+    "retention_devices": [
+      "Number hook: '600 of you'",
+      "Red strike-through of the common approach at 0:06 creates a clear enemy",
+      "Mid-roll save ask at 0:15 with an animated bookmark",
+      "Open loop at 0:35 'still just a pile... this is where it actually gets good'",
+      "Labeled Step 1/2/3 tags give progress markers",
+      "Objection handling at 1:00 ('I'm not selling out on you') before the CTA"
+    ]
+  },
+
+  "moves": [
+    {
+      "type": "hook",
+      "move": "Lead with a number from your own audience ('600 of you DM'd me') then tell them they are doing it wrong.",
+      "evidence": "0:00 '600 of you DM me ... and most of you are doing it wrong' over the mascot"
+    },
+    {
+      "type": "edit",
+      "move": "Draw the wrong method, then cross it out in red with a handwritten 'wrong' label before showing the right one.",
+      "evidence": "0:06 to 0:09 '1 REEL = 1 SKILL' diagram struck through in red, script 'wrong'"
+    },
+    {
+      "type": "structure",
+      "move": "Teach in numbered steps and show a red STEP tag top-center for each; each step gets its own diagram so the viewer can follow with sound off.",
+      "evidence": "0:27 'STEP 1 ONE PLACE', 0:36 'STEP 2 COMPARE', 0:46 'STEP 3 STACK THEM'"
+    },
+    {
+      "type": "edit",
+      "move": "Replace stock b-roll with simple pixel-style diagrams that act out each spoken noun (pile of reels, inbox, knowledge base, KEPT card).",
+      "evidence": "0:18 reel-tile grid, 0:23 DMs 'never opened', 0:39 five creator cards one marked KEPT"
+    },
+    {
+      "type": "trust",
+      "move": "Before the CTA, show the cheap-course objection and kill it (crossed-out $497 course, 'not happening') then promise free help.",
+      "evidence": "1:00 '$497 The AI skills course' crossed out; 1:04 'full-guide.pdf'; 1:08 'FREE' tag on setup help"
+    },
+    {
+      "type": "cta",
+      "move": "Show the comment keyword being typed into a mock comment box and the guide arriving as a DM, so viewers see the exact action and result.",
+      "evidence": "1:05 'Comment CAMPAIGN' box types out, 'full-guide.pdf / Here's the full guide' reply bubble"
+    },
+    {
+      "type": "teaching",
+      "move": "Give a three-step system whose middle step is a judgment rule (if many creators teach the same thing, keep the one that works and drop the rest).",
+      "evidence": "0:39 to 0:46 'if five creators are teaching the same thing, it keeps the version that actually works and gets rid of the rest'"
+    }
+  ],
+
+  "steal": "Cross out the common approach in red with a handwritten 'wrong', then teach a 3-step replacement with a numbered red tag per step.",
+  "confidence": "high"
+}
